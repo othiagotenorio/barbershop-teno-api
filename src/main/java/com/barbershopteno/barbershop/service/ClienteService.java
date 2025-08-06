@@ -13,11 +13,11 @@ public class ClienteService {
     @Autowired
     private ClienteRepository repository;
 
-    public Cliente salvar(Cliente cliente){
+    public Cliente salvar(Cliente cliente) {
         return repository.save(cliente);
     }
 
-    public Cliente buscarPorId(Long id){
+    public Cliente buscarPorId(Long id) {
         return repository.findById(id).orElseThrow(() -> new RuntimeException("Cliente não encontrado"));
     }
 
@@ -32,6 +32,14 @@ public class ClienteService {
         cliente.setTelefone(clienteAtualizado.getTelefone());
         cliente.setCpf(clienteAtualizado.getCpf());
         return repository.save(cliente);
+    }
+
+    public boolean deletar(Long id) {
+        if (repository.existsById(id)) {
+            repository.deleteById(id);
+            return true;
+        } else
+            return false;
     }
 
 }
