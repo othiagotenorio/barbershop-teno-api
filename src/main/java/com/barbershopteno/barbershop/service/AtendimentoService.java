@@ -58,7 +58,7 @@ public class AtendimentoService {
         return atendimentoRepository.findAll();
     }
 
-    public List<Atendimento> listarAtendimentoPorNomeBarbeiro(Long id) {
+    public List<Atendimento> listarAtendimentoPorIdBarbeiro(Long id) {
         return atendimentoRepository.findAtendimentoBarbeiro(id);
     }
 }
