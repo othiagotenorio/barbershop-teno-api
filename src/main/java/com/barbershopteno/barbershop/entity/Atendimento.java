@@ -3,8 +3,6 @@ package com.barbershopteno.barbershop.entity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
-
-import javax.xml.ws.Service;
 import java.time.LocalDateTime;
 
 @Entity
