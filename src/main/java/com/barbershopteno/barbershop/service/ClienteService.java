@@ -42,4 +42,8 @@ public class ClienteService {
             return false;
     }
 
+    public Cliente buscarPorCpf(String cpf) {
+        return repository.findByCpf(cpf).orElseThrow(() -> new RuntimeException("Cliente com CPF não encontrado"));
+    }
+
 }
