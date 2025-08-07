@@ -1,9 +1,6 @@
 package com.barbershopteno.barbershop.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
@@ -19,11 +16,17 @@ public class Atendimento {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-
+    @ManyToOne
     private Cliente cliente;
+
+    @ManyToOne
     private Barbeiro barbeiro;
+
+    @ManyToOne
     private Service service;
+
     private Integer senha;
+
     private LocalDateTime dataHora;
 
 
