@@ -23,7 +23,7 @@ public class Atendimento {
     private Barbeiro barbeiro;
 
     @ManyToOne
-    private Service service;
+    private Servico servico;
 
     private Integer senha;
 
